@@ -49,7 +49,7 @@ ___
 
 ## Conclusions
 ### Final Equation
->**y = 0.0902 + (0.4914)Temperature + (0.2334)Year + (0.0970)Winter + (0.0916)September + (0.0645)Saturday >+ (0.0566)WorkingDay + (0.0527)Summer + (-0.0650)Spring + (-0.0786)Mist + Cloudy + (-0.3041)LightSnow**
+**y = 0.0902 + (0.4914)Temperature + (0.2334)Year + (0.0970)Winter + (0.0916)September + (0.0645)Saturday + (0.0566)WorkingDay + (0.0527)Summer + (-0.0650)Spring + (-0.0786)Mist + Cloudy + (-0.3041)LightSnow**
 ### R-Squared Analysis
 >R-Squared(Training Set) - 0.826 </br>
 >Adj R-Squared(Training Set) - 0.822 </br>
