@@ -69,6 +69,6 @@ Name - Jai Prakash</br>
 Email - [jai.sharma06@live.com](mailto:jai.sharma06@live.com)</br>
 Phone - +91-8447490922
 
-PDF - [Solved Subjective Questions](#)
+PDF - [Solved Subjective Questions](https://github.com/jaisharma06/BikeSharingAssignment/blob/main/linear_regression__subjective_questions_solved.pdf)
 
 *Feel free to contact :smiley:!*
