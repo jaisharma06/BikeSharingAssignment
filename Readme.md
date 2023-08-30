@@ -69,4 +69,6 @@ Name - Jai Prakash</br>
 Email - [jai.sharma06@live.com](mailto:jai.sharma06@live.com)</br>
 Phone - +91-8447490922
 
+PDF - [Solved Subjective Questions](#)
+
 *Feel free to contact :smiley:!*
