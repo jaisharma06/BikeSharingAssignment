@@ -4,6 +4,8 @@
   - [1. From your analysis of the categorical variables from the dataset, what could you infer about their effect on the dependent variable?](#1-from-your-analysis-of-the-categorical-variables-from-the-dataset-what-could-you-infer-about-their-effect-on-the-dependent-variable)
   - [2. Why is it important to use drop\_first=True during dummy variable creation?](#2-why-is-it-important-to-use-drop_firsttrue-during-dummy-variable-creation)
   - [3. Looking at the pair-plot among the numerical variables, which one has the highest correlation with the target variable?](#3-looking-at-the-pair-plot-among-the-numerical-variables-which-one-has-the-highest-correlation-with-the-target-variable)
+  - [4. How did you validate the assumptions of Linear Regression after building the model on the training set?](#4-how-did-you-validate-the-assumptions-of-linear-regression-after-building-the-model-on-the-training-set)
+  - [5. Based on the final model, which are the top 3 features contributing significantly towards explaining the demand of the shared bikes?](#5-based-on-the-final-model-which-are-the-top-3-features-contributing-significantly-towards-explaining-the-demand-of-the-shared-bikes)
 - [General Subjective Questions](#general-subjective-questions)
   - [1. Explain the linear regression algorithm in detail.](#1-explain-the-linear-regression-algorithm-in-detail)
   - [2. Explain the Anscombe’s quartet in detail.](#2-explain-the-anscombes-quartet-in-detail)
@@ -15,7 +17,14 @@ ___
   
 # Assignment-based Subjective Questions
 ## 1. From your analysis of the categorical variables from the dataset, what could you infer about their effect on the dependent variable?
->
+By analysing the categorical variables we can infer that:
+  - The demad of bike is less in the month of spring when compared with other seasons
+  - The demand bike increased in the year 2019 when compared with year 2018.
+  - Month Jun to Sep is the period when bike demand is high. The Month Jan is the lowest demand month.
+  - Bike demand is less in holidays in comparison to not being holiday.
+  - The demand of bike is almost similar throughout the weekdays.
+  - There is no significant change in bike demand with working day and non-working day.
+  - The bike demand is high when weather is clear and Few clouds however demand is less in case of Lightsnow and light rainfall. We do not have any dat for Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog , so we can not derive any conclusion. May be the company is not operating on those days or there is no demand of bike.
 ___
 ## 2. Why is it important to use drop_first=True during dummy variable creation? 
 >When creating dummy variables from categorical variables with multiple categories (levels), it's common practice to use the drop_first=True parameter. This parameter controls whether to drop the first category when creating dummy variables. This might seem counterintuitive, but it's important for several reasons:
@@ -34,6 +43,36 @@ Looking at the pair-plot we can infer a few things:
    1. **'registered'** - Seems to have the highest correlation with the target variable i.e. **'cnt'** but as we know *'cnt = registered + casual'* this behaviour is expected.
    2. **'temp'** - Seems to have a pretty good correlation with the target variable i.e. **'cnt'**. After **'registered'**, **'temp'** is the variable which seems to have highest correlation with the **'cnt'**.
 ___
+## 4. How did you validate the assumptions of Linear Regression after building the model on the training set?
+>Assumptions of Linear Regression:-
+  >1. There exists some kind of linear relationship between X and y.
+  >2. Error terms are normally distributed.
+  >3. Error terms are independant of each other.
+  >4. Error terms have constant variance(Homosedacity).
+
+- **Validating Linear Relation between X and y:**</br>
+  - We drew a pair plot and found that there exists a linear relation between **'cnt'** and **'temp'**.
+
+- **Validating that error terms are independant of each other**</br>
+  - Drew a heatmap on the train set correlation.
+  - Calculated VIF for all the predictors and removed predictors with high VIF.
+  - VIF(Variance Inflation Factor) - High VIF indicates high correlation between the predictors.
+
+- **Validating that Error terms are normally distributed:**</br>
+  we drew a distplot for the residuals(error terms) from that we can infer that:</br>
+    - There is no pattern in the error terms.
+    - Mean is almost 0.
+    - The plot appears to be a normal distribution.
+    - There doesn't seems to be pattern in the error terms.
+
+- **Validating Homosedacity:**</br>
+  - Drew a scatter plot between residuals and y_train and found out that there exists a constant variance in the error terms.
+___
+## 5. Based on the final model, which are the top 3 features contributing significantly towards explaining the demand of the shared bikes?
+The top 3 features contributing significantly towards explaining the demand of the shared bikes are as follows:
+  1. **Temperature** - β1 value is 0.4914(High temperature indicates high count of bikes sharing count).
+  2. **Year** - β2 value is 0.2334(In 2019 Bike sharing count was comparatively very high than in 2018).
+  3. **Season(Winter)** - β3 value is 0.0970(In winters bike sharing count is comparatively high).
 ___
 # General Subjective Questions
 ## 1. Explain the linear regression algorithm in detail.
